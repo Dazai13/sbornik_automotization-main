@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Document</title> 
+</head>
+<body>
+    <div class="page">
+        <div class="page-container">
+            <div class="page-header">
+                <div class="header-inner">
+                    <div class="logo">
+                        <div class="logo-img"><img src="assets/img/logo.svg" alt=""></div>
+                        <div class="logo-text">Сборник <br>автоматизации</div>
+                    </div>
+                    <div class="nav">
+                        <div class="info"><img src="assets/img/info.svg" alt=""></div>
+                        <div class="message"><img src="assets/img/message.svg" alt=""></div>
+                        <div class="account">
+                            <span class="account-text">
+                                Беля Александр Витальевич
+                            </span>
+                            <img src="assets/img/exit.svg" alt="" class="account-img">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="page-body">
+                <div class="body-btn">
+                    <button class="btn-desktop">
+                        <span class="btn-text">
+                            Рабочий стол
+                        </span>
+                    </button>
+                    <button class="btn-example">
+                        <span class="btn-text">
+                            Задачи
+                        </span>
+                    </button>
+                </div>
+                <div class="body-table">
+                    <div class="table-header">
+                        <div class="table-header-title">Настройка доменной авторизации на <br>сервере приложений</div>
+                        <div class="table-header-nav">
+                            <button class="btn-documentation">
+                                <span class="table-btn-text">
+                                    Посмотреть документацию
+                                </span>
+                            </button>
+                            <button class="btn-close">
+                                <span class="table-btn-text">
+                                    Закрыть
+                                </span>
+                            </button>
+                            <button class="btn-next">
+                                <span class="table-btn-text">
+                                    Далее
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="table-line"></div>
+                    <div class="table-subtitle">
+                        Сценарий предназначен для настройки доменной авторизации (подключение на веб-интерфейс консоли управления с использованием <br>учетной записи, зарегистрированной в службе каталогов Active Directory) на серверах приложений
+                    </div>
+                    <div class="table">
+                        <div class="table-inner">
+                            <div class="select">
+                                <div class="select-text">Серверы приложений (1500)</div>
+                                <div class="select-button">
+                                    <button class="btn-select">
+                                        <span class="select-btn-text">
+                                            Выбрано: 0
+                                        </span>
+                                        <img src="assets/img/arrow.svg" alt="">
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="search">
+                                <textarea class="search-input" type="text" placeholder="Введите значения через ‘;’, ‘,’, пробел или перенос строки"></textarea>
+                            </div>
+                            <div class="render-table">
+                                <table class="main-table">
+                                    <thead class = "main-table-header">
+                                    <tr class = "table-header-row">
+                                        <th class = "table-header-row-empty"></th>
+                                        <th class = "table-header-row-title">Имя сервера</th>
+                                        <th class = "table-header-row-title">IP адрес</th>
+                                        <th class = "table-header-row-title">Класс среды</th>
+                                        <th class = "table-header-row-title">Имя АС</th>
+                                    </tr>
+                                    <tr class="table-header-row">
+                                        <td style = "background-color: #ECEAEA;" class = "checkboxSearch"><input type="checkbox"></td>
+                                        <td><input type="text" class="column-filter" data-column="name" placeholder="" /></td>
+                                        <td><input type="text" class="column-filter" data-column="ip" placeholder="" /></td>
+                                        <td><input type="text" class="column-filter" data-column="environment" placeholder="" /></td>
+                                        <td><input type="text" class="column-filter" data-column="system" placeholder="" /></td>
+                                    </tr>                                    
+                                    </thead>
+                                    <tbody id="table-body"></tbody>
+                                </table>
+                            </div>
+                            <div id="pagination" class="pagination">
+                                <div class="show">
+                                    <button id="show-5" class="rows-per-page">5</button>
+                                    <button id="show-10" class="rows-per-page">10</button>
+                                    <button id="show-20" class="rows-per-page">50</button>
+                                    <button id="show-30" class="rows-per-page">100</button>
+                                </div>
+                                <div class="btn-page">
+                                    <button class="btn-prev-page">
+                                        <span class="table-btn-text">
+                                            Пред. страница
+                                        </span>
+                                    </button>
+                                    <button class="btn-next-page">
+                                        <span class="table-btn-text">
+                                            След. страница
+                                        </span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="assets/js/dataGeneration.js"></script>
+    <script src="assets/js/table.js"></script>
+</body>
+</html>
