@@ -252,24 +252,28 @@ function createPopupMenu(button) {
 
     return menu;
 }
-document.querySelector('.btn-select').addEventListener('click', (event) => {
-    event.preventDefault();
-    const existingMenu = document.querySelector('.popup-menu');
+document.querySelector('.btn-select').addEventListener('click', function () {
+    const button = this;
+    const menu = document.querySelector('.popup-menu');
 
-    if (existingMenu) {
-        existingMenu.remove();
+    if (menu) {
+        menu.remove();
     } else {
-        const popupMenu = createPopupMenu(event.target);
-        document.body.appendChild(popupMenu);
-        document.addEventListener(
-            'click',
-            (e) => {
-                if (!popupMenu.contains(e.target) && !event.target.contains(e.target)) {
-                    popupMenu.remove();
-                }
-            },
-            { once: true }
-        );
+        const rect = button.getBoundingClientRect(); 
+
+        const newMenu = createPopupMenu(button); 
+        newMenu.style.position = 'absolute';
+        newMenu.style.top = `${rect.bottom + window.scrollY}px`; 
+        newMenu.style.left = `${rect.left + window.scrollX}px`;  
+        newMenu.style.width = `${rect.width}px`; 
+
+        document.body.appendChild(newMenu);
+
+        document.addEventListener('click', function(e) {
+            if (!newMenu.contains(e.target) && !button.contains(e.target)) {
+                newMenu.remove(); 
+            }
+        }, { once: true });
     }
 });
 
@@ -334,7 +338,7 @@ function updatePaginationButtons(totalPages) {
 
 document.addEventListener('DOMContentLoaded', () => {
     const totalPages = Math.ceil(filteredData.length / rowsPerPage);
-    updatePaginationButtons(totalPages); 
+    updatePaginationButtons(totalPages)
     renderTable(); 
 });
 
