@@ -232,7 +232,12 @@ th, td, tr, table, input{
     height:72px;
     border: 1px solid #4B4B4B;
     background: url('../img/search.gray.svg') no-repeat 1294px;
-    resize: none;
+    resize: none;    
+    font-family:Arial;
+    font-weight:400;
+    font-size: 20px;
+    padding-top:13px;
+    padding-left:15px;
 }
 .render-table{
     display:flex;
